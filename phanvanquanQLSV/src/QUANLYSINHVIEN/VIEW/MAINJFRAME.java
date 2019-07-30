@@ -72,7 +72,7 @@ public class MAINJFRAME extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QUANLYSINHVIEN/IMAGE/baseline_supervised_user_circle_white_24dp.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QUANLYSINHVIEN/IMAGE/baseline_list_alt_white_24dp.png"))); // NOI18N
         jButton2.setText("QL ĐIỂM SINH VIÊN");
         jButton2.setToolTipText("");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
