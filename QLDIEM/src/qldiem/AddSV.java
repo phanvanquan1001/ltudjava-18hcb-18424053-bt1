@@ -9,6 +9,6 @@ package qldiem;
  *
  * @author minhq
  */
-public class AddSV {
+public class AddSV extends SV {
     
 }

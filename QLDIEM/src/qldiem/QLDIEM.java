@@ -17,7 +17,7 @@ Xuat ra xep loai cua tung HS trong mang.*/
  *
  * @author minhq
  */
-public class QLDIEM {
+public class QLDIEM extends SV{
 
     /**
      * @param args the command line arguments
@@ -37,7 +37,31 @@ public class QLDIEM {
         if(user.equals("giaovu")&&pass.equals("giaovu")){
             System.out.println("Đây là chức năng dành cho Giáo Vụ");
              // TODO code application logic here
+             ArrayList<SV> mang=new ArrayList();
+              while (true) {
+            System.out.println("Ban muon nhap gi 1. HSCap1 2. HSCap2 3. HSCap 3  4. ket thuc");
+            Scanner a = new Scanner(System.in);
+            int chon = a.nextInt();
+            SV b = null;
+            if (chon == 1) {
+                b = new AddSV();
+            }
+            
+            if (chon == 4) {
+                break;
+            }
+            b.nhap();
+            mang.add(b);
+
         }
+        for(int i=0;i<mang.size();i++)
+        {
+            mang.get(i).Xuat();
+            mang.get(i).xeploaiSV();
+        }
+          }
+        
+        
         else{
             System.out.println("Sai User hoặc Pass");
         }
