@@ -10,5 +10,12 @@ package QUANLYSINHVIEN.MAIN;
  * @author minhq
  */
 public class ImportSV {
+    private int id;
+    private String code;
+    private String name;
+ 
+    public Country() {
+        super();
+    }
     
 }
