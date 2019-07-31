@@ -24,6 +24,28 @@ public class QLDIEM {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         Scanner sc = new Scanner(System.in);
+        //lấy user nhạp từ bàn phím
+        System.out.print("Username: ");
+        String user=sc.nextLine();
+         //lấy pass nhạp từ bàn phím
+        System.out.print("Password: ");
+        String pass=sc.nextLine();
+        try{
+        if(user.equals("")||pass.equals("")){
+        System.out.println("Vui lòng nhập đủ thông tin.");}
+        if(user.equals("giaovu")&&pass.equals("giaovu")){
+            System.out.println("Đây là chức năng dành cho Giáo Vụ");
+             // TODO code application logic here
+        }
+        else{
+            System.out.println("Sai User hoặc Pass");
+        }
+        }
+        catch(Exception e){
+            System.out.println("Kết nối thất bại");
+          
+        }
     }
     
 }
