@@ -133,6 +133,11 @@ public class Main extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jtfCurrent.setEnabled(false);
+        jtfCurrent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfCurrentActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 102, 0));
@@ -451,7 +456,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -460,10 +465,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel14))
+                    .addComponent(jLabel14)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel8)
@@ -475,7 +479,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addGap(38, 38, 38)
                         .addComponent(jLabel12)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         jtpContent.addTab("Main", jPanel6);
@@ -765,6 +769,10 @@ public class Main extends javax.swing.JFrame {
     private void jbtinhdiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtinhdiemActionPerformed
       
     }//GEN-LAST:event_jbtinhdiemActionPerformed
+
+    private void jtfCurrentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCurrentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfCurrentActionPerformed
 
     /**
      * @param args the command line arguments
