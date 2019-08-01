@@ -17,7 +17,7 @@ Xuat ra xep loai cua tung HS trong mang.*/
  *
  * @author minhq
  */
-public class QLDIEM extends SV{
+public class QLDIEM extends ImportFile{
 
     /**
      * @param args the command line arguments
@@ -37,14 +37,20 @@ public class QLDIEM extends SV{
         if(user.equals("giaovu")&&pass.equals("giaovu")){
             System.out.println("Đây là chức năng dành cho Giáo Vụ");
              // TODO code application logic here
-             ArrayList<SV> mang=new ArrayList();
+             ArrayList<ImportFile> mang=new ArrayList();
               while (true) {
-            System.out.println("Ban muon nhap gi 1. HSCap1 2. HSCap2 3. HSCap 3  4. ket thuc");
+            System.out.println("Ban muon nhap gi 1. Thêm SV 2. ImportDSL17 3. ImportDSL18  4. ket thuc");
             Scanner a = new Scanner(System.in);
             int chon = a.nextInt();
-            SV b = null;
+            ImportFile b = null;
             if (chon == 1) {
                 b = new AddSV();
+            }
+            if (chon == 2) {
+                b = new ImportDSL17HCB();
+            }
+            if (chon == 3) {
+                b = new ImportDSL18HCB();
             }
             
             if (chon == 4) {
@@ -56,7 +62,7 @@ public class QLDIEM extends SV{
         }
         for(int i=0;i<mang.size();i++)
         {
-            mang.get(i).Xuat();
+            mang.get(i).ShowFile( "17HCB.CSV");
             mang.get(i).xeploaiSV();
         }
           }

@@ -17,7 +17,7 @@ import java.io.InputStreamReader;
  *
  * @author minhq
  */
-public class ImportFileCSV {
+public class ImportFile{
     void ShowFile( String  namefile) {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
