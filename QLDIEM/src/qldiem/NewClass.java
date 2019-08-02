@@ -19,7 +19,7 @@ class NewClass {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
      
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ namefile;
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
             File f = new File(currentDirectory );
             System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
@@ -41,7 +41,7 @@ class NewClass {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
      
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ namefile;
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
             File f = new File(currentDirectory );
             System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
@@ -68,8 +68,8 @@ class NewClass {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
      
-            String inputDirectory = System.getProperty("user.dir")+ "\\text\\"+ importInput;
-            String outputDirectory = System.getProperty("user.dir")+ "\\text\\"+ importOutput;
+            String inputDirectory = System.getProperty("user.dir")+ "\\"+ importInput;
+            String outputDirectory = System.getProperty("user.dir")+ "\\"+ importOutput;
             File input = new File(inputDirectory );
             File output = new File(outputDirectory );
             FileWriter fw = new FileWriter(output, true);
@@ -96,7 +96,7 @@ class NewClass {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
                                
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ filename;
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ filename;
             File f = new File(currentDirectory );
             System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
