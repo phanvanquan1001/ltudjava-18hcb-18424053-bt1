@@ -5,28 +5,24 @@
  */
 package qldiem;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.FileWriter;
-import java.io.OutputStreamWriter;
 import java.util.Scanner;
-/**
- *
- * @author minhq
- */
-class function {
-     Scanner scanner = new Scanner(System.in);
+import java.io.OutputStreamWriter;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+public class function {
+    Scanner scanner = new Scanner(System.in);
      void showfile( String  namefile) {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
      
             String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
             File f = new File(currentDirectory );
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
             String line;
             while ((line = br.readLine()) != null){
@@ -49,13 +45,13 @@ class function {
      
             String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
             File f = new File(currentDirectory );
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
             String line;
             while ((line = br.readLine()) != null){
                 
                 String[] output = line.split(",");
-                if (MSSV == output[0])
+                if (MSSV.equals(output[0]))
                 {
                     System.out.println(line);
                     return 1;
@@ -104,9 +100,9 @@ class function {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
              //System.out.println(username);
              //       System.out.println(password);                  
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ filename;
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ filename;
             File f = new File(currentDirectory );
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
             String line;
             while ((line = br.readLine()) != null){
@@ -114,9 +110,9 @@ class function {
                 String[] output = line.split(",");
                 
               
-               if (username.equals(output[0]))  {
+               if (username.equals(output[1]))  {
             
-                    if (password.equals(output[2])) return 1;
+                    if (password.equals(output[4])) return 1;
                 }
             }
             br.close();
@@ -126,7 +122,7 @@ class function {
         {
         System.out.println("Loi ghi file: " + ex);
         }
-        return 1;
+        return 0;
      }
     
 
@@ -136,12 +132,12 @@ class function {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
              //System.out.println(username);
              //       System.out.println(password);                  
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ filename;
-            String tempfile = System.getProperty("user.dir")+ "\\text\\filetemp.csv";
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ filename;
+            String tempfile = System.getProperty("user.dir")+ "\\filetemp.csv";
             File input = new File( currentDirectory);
             File temp = new File(tempfile);
             FileWriter fw = new FileWriter(temp);
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(input), "UTF8"));
             String line;
             
@@ -177,12 +173,12 @@ class function {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
              //System.out.println(username);
              //       System.out.println(password);                  
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ filename;
-            String tempfile = System.getProperty("user.dir")+ "\\text\\filetemp.csv";
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ filename;
+            String tempfile = System.getProperty("user.dir")+ "\\filetemp.csv";
             File input = new File( currentDirectory);
             File temp = new File(tempfile);
             FileWriter fw = new FileWriter(temp);
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(input), "UTF8"));
             String line;
             System.out.println("Moi ban nhap diem mon 1 ");
@@ -224,7 +220,7 @@ class function {
         int add( String filename ) {
         try {
 
-            String inputDirectory = System.getProperty("user.dir")+ "\\text\\tempfile.csv" ;
+            String inputDirectory = System.getProperty("user.dir")+ "\\ttempfile.csv" ;
           // FileWriter fw = new FileWriter(inputDirectory, true);
             File fileDir = new File(inputDirectory);
  
@@ -248,34 +244,39 @@ void result( String  namefile) {
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
      
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ namefile;
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
             File f = new File(currentDirectory );
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
             String line;
-            int dau =0;
-            int tong =0;
+            float dau =0;
+            float tong =0;
             while ((line = br.readLine()) != null){
-                System.out.println(line);
+                
                 tong++;
                 String[] output = line.split(",");
-                int D2 = Integer.parseInt(output[2]);
-                int D3 = Integer.parseInt(output[3]);
-                int D4 = Integer.parseInt(output[4]);
+                float D2 =  Float.parseFloat(output[2]);
+                float D3 =  Float.parseFloat(output[3]);
+                float D4 =  Float.parseFloat(output[4]);
                 if (D2<5 | D3 < 5| D4<5  ){
+                    System.out.println(line);
+                    System.out.println("rot");
                     continue;
                 }
                 else {
+                    System.out.println(line);
+                    System.out.println("dau");
                     dau++;
                 }
-                    
                 
+                    
+              
                 
              }
             System.out.println("tong so luong sinh vien: "+ tong);
             System.out.println("tong so luong sinh vien dau: "+ dau);
             System.out.println("tong so luong sinh vienrot : "+ (tong - dau));
-            System.out.println("ti le sinh vien dau/rot: "+ (dau/(tong- dau)));
+            System.out.println("ti le sinh vien dau/rot: "+ Float.toString(dau/(tong- dau)*100)+ "%");
             br.close();
          } 
         catch (IOException ex) 
@@ -295,12 +296,12 @@ void result( String  namefile) {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
              //System.out.println(username);
              //       System.out.println(password);                  
-            String currentDirectory = System.getProperty("user.dir")+ "\\text\\"+ filename;
-            String tempfile = System.getProperty("user.dir")+ "\\text\\filetemp.csv";
+            String currentDirectory = System.getProperty("user.dir")+ "\\"+ filename;
+            String tempfile = System.getProperty("user.dir")+ "\\filetemp.csv";
             File input = new File( currentDirectory);
             File temp = new File(tempfile);
             FileWriter fw = new FileWriter(temp);
-            System.out.println(currentDirectory);
+            //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(input), "UTF8"));
             String line;
             System.out.println("Moi ban nhap mat khau moi diem mon 1 ");
@@ -335,4 +336,5 @@ void result( String  namefile) {
         }
         return 0;
     } 
+     
 }
