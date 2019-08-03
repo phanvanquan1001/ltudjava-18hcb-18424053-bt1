@@ -9,9 +9,9 @@ package qldiem;
  *
  * @author minhq
  */
-public class ImportD {
+public class ImportD extends function{
       public static void main(String[] args) {
-        NewClass lop = new NewClass();
+        function lop = new function();
         lop.importfile("Diem.CSV", "DiemOUT.CSV");
     }
 }

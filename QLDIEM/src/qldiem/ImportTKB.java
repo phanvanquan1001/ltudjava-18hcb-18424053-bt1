@@ -9,10 +9,10 @@ package qldiem;
  *
  * @author minhq
  */
-public class ImportTKB {
+public class ImportTKB extends function{
     
      public static void main(String[] args) {
-        NewClass lop = new NewClass();
+        function lop = new function();
         lop.importfile("tkb18.CSV", "tkb18OUT.CSV");
     }
 }

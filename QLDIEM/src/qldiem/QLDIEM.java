@@ -25,91 +25,114 @@ public class QLDIEM{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        ArrayList<NewClass> mang = new ArrayList();
-        NewClass lop = new NewClass(); 
+   public static void main(String[] args) {
+        function lop = new function(); 
         Scanner scanner = new Scanner(System.in);
-        int HCB17 = 0;
-        int HCB18 =0;
+        int khoa2017 = 0;
+        int khoa2018 =0;
         int giaovu =0 ;
         String username ;
-        String password ;
+        String username1;
+        String MSSV;
+        String password;
         
-        while(true)
+        System.out.println("Moi ban dang nhap\n");
+        
+       while(true)
         {
-            System.out.println("Vui lòng dang nhap\n");
-            System.out.println("Username: ");
-            username = scanner.next();
-            System.out.println("Password: ");
+            System.out.println("Moi ban nhap user name");
+            System.out.println("Username:\n");
+            username1 = scanner.next();
+            System.out.println("Moi ban nhap mat khau\n");
+            System.out.println("Password:\n");
             password = scanner.next();        
-            HCB17 =lop.login(username, password, "17HCB.csv");
-            HCB18 = lop.login(username, password, "18HCB.csv");
-            //giaovu = lop.login(username, password, "giaovu.csv");
-            if (HCB17==1 || HCB18==1 || giaovu== 1 ) break;
-            else {
-                System.out.println("Vui lòng kiểm tra lại username hoặc password");
+            khoa2017 =lop.login(username1, password, "khoa2017.csv");
+            khoa2018 = lop.login(username1, password, "khoa2018.csv");
+            giaovu = lop.login(username1, password, "giaovu.csv");
+            username = username1;
+            if (khoa2017==1 || khoa2018==1 || giaovu== 1 ){
+                System.out.println("dang nhap thanh cong");
+                
             }
-        }
-        if(HCB17 ==1 | HCB18 ==1){
+            else {
+                System.out.println("ban da nhap sai username hoac password");
+            }
+        
+        
+        if(khoa2017 ==1 | khoa2018 ==1){
             while(true){
-                System.out.println("CHÀO MỪNG ĐẾN VỚI TRANG XEM ĐIỂM CỦA SINH VIÊN\n");
-         
-                System.out.println("Chọn Chức Năng\n");
-                System.out.println("0: Đăng Xuất");
-                System.out.println("1: Xem Điểm Môn Java\n");
-                System.out.println("2: Xem Điểm Môn KCPM\n");
-                System.out.println("3: Xem Điểm Môn MMT\n");
-                System.out.println("4: Xem Điểm Môn TKGD\n");
+                System.out.println("moi ban nhap tinh nang\n");
+                System.out.println("0: de dang xuat\n");
+                System.out.println("1: xem danh diem mon Java\n");
+                System.out.println("2: xem danh sach diem mon KCPM\n");
+                System.out.println("3: xem danh diem mon MMT\n");
+                System.out.println("4: xem danh diem mon TKGD\n");
                 
                 
                 int value = scanner.nextInt();
-                
                 if (value==0) break;
                 switch (value) {
                 case 1:
-                lop.showinfor(username,"danhsachJava.csv");
+                lop.showinfor(username,"diemJAVA.csv");
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 case 2:
-                lop.showinfor(username, "danhsachKCPM.csv");         
+                lop.showinfor(username, "diemKCPM.csv");         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 case 3:
-                lop.showinfor(username, "danhsachMMT.csv");         
+                lop.showinfor(username, "diemMMT.csv");         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 case 4:
-                lop.showinfor(username, "danhsachTKGD.csv");         
+                lop.showinfor(username, "diemTKGD.csv");         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 }
-        
-   
+            
+            }
+            break;
         }
-    }
         
-        if(giaovu ==1 ){
+        
+         if(giaovu == 1 ){
             while(true){
                 System.out.println("Chọn Chức Năng");
                 System.out.println("moi ban nhap tinh nang\n");
                 System.out.println("0: an 0 de dang xuat");
                 System.out.println("1: import DSlop 17HCB");
                 System.out.println("2: import DSlop 18HCB");
-                System.out.println("3: xem diem mon cac mon");
-                System.out.println("4: nhap ma so sinh vien de remove khoi mon nao do");
+                System.out.println("3: xem DSL 17HCB");
+                System.out.println("4: xem DSL 18HCB");
                 System.out.println("5: Sua diem sinh vien theo ma so va mon hoc");
                 System.out.println("6: Them sinh vien vao danh sach lop");
                 System.out.println("7: Tong ket mon hoc");
                 System.out.println("8: Doi mat khau");
             Scanner a = new Scanner(System.in);
             int chon = a.nextInt();
-            NewClass b = null;
+            function b = null;
             if (chon == 1) {
-                b = new HSCap1();
+                b = new ImportDSL17HCB();
+               System.out.println("1: import DSlop 17HCB thành công");
             }
             if (chon == 2) {
-                b = new HSCap2();
+                b = new ImportDSL17HCB();
+                System.out.println("********************************");
+                System.out.println(" DSlop 17HCB");
+                b.showfile("17HCB.csv");
+                }
+                            
+             if (chon == 3) {
+                b = new ImportDSL18HCB();
+                b.showfile("18HCB.csv");
+                System.out.println("1: import DSlop 18HCB thành công");
+             }
+             if (chon == 2) {
+                b = new ImportDSL17HCB();
+                System.out.println("********************************");
+                System.out.println(" DSlop 17HCB");
+                b.showfile("17HCB.csv");
+                }
                 
                 
                 
