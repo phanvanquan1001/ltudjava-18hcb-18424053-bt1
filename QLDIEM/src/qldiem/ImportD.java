@@ -10,5 +10,8 @@ package qldiem;
  * @author minhq
  */
 public class ImportD {
-    
+      public static void main(String[] args) {
+        NewClass lop = new NewClass();
+        lop.importfile("Diem.CSV", "DiemOUT.CSV");
+    }
 }

@@ -19,12 +19,12 @@ import java.io.FileWriter;
  *
  * @author minhq
  */
-public class ImportDSL18HCB extends ImportFile{
+public class ImportDSL18HCB {
      /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ImportFile lop = new ImportFile();
-        lop.ImportFile("18HCB.CSV", "18HCBOUT.CSV");
+        NewClass lop = new NewClass();
+        lop.importfile("18HCB.CSV", "18HCBOUT.CSV");
     }
 }

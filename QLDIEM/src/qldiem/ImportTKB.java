@@ -11,4 +11,8 @@ package qldiem;
  */
 public class ImportTKB {
     
+     public static void main(String[] args) {
+        NewClass lop = new NewClass();
+        lop.importfile("tkb18.CSV", "tkb18OUT.CSV");
+    }
 }
