@@ -27,6 +27,7 @@ public class QLDIEM{
      */
    public static void main(String[] args) {
         function lop = new function(); 
+        file f = new file();
         Scanner scanner = new Scanner(System.in);
         int khoa2017 = 0;
         int khoa2018 =0;
@@ -67,7 +68,7 @@ public class QLDIEM{
                 if (value==0) break;
                 switch (value) {
                 case 1:
-                lop.showinfor(username,"DiemJAVA.csv");
+                f.showinfor(username,"DiemJAVA.csv");
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 
@@ -102,46 +103,46 @@ public class QLDIEM{
                 int value = scanner.nextInt();
                 if (value==0) break;
                 String fileinput;
-                String fileoutput;
+                
                 switch (value) {
                 case 1:
                 fileinput = scanner.next();
-                    lop.importfile( fileinput,"17HCBOUT.csv.csv");
+                    f.importfile( fileinput,"17HCBOUT.csv");
                         //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                     break;
                 case 2:
                 fileinput = scanner.next();
                         //lop.showinfor(username, "danhsachKCPM.csv");         
-                    lop.importfile(fileinput, "18HCBOUT.csv"); 
+                    f.importfile(fileinput, "18HCBOUT.csv"); 
                     break;
 
                 case 3:
                     System.out.println("Import bang diem //Moi nhap lop can xem diem (Diem18HCB-CTT001.csv) ");
                     fileinput = scanner.next();
-                    lop.showfile(fileinput);         
+                    f.showfile(fileinput);         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;                  
                     
                 case 4:
-                    System.out.println("Nhập MaSV cần Xóa");
+                    System.out.println("Nhap MaSV Can Xoa");
                     
                     MSSV = scanner.next();
-                    System.out.println("Nhập Lớp có SV cần Xóa (17HCB.csv , 18HCB.csv");
+                    System.out.println("Nhap Lop Co SV n Xoa (17HCB.csv , 18HCB.csv");
                     fileinput = scanner.next();
                     lop.remove(MSSV,fileinput );         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 case 5:
-                    System.out.println("Nhập MaSV cần sửa điểm");
+                    System.out.println("Nhap SV Can Sua Diem");
                     
                      MSSV = scanner.next();
-                    System.out.println("Nhập môn có SV cần sửa điểm (Diem18HCB-CTT001.csv)");
+                    System.out.println("Nhap Mon Co SV Can Sua Diem (Diem18HCB-CTT001.csv)");
                     fileinput = scanner.next();
                     lop.change(MSSV,fileinput );         
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;
                 case 6:
-                    System.out.println("Thêm sinh viên vào  hệ thống vd:  18HCB.csv hoac 17HCB.csv");
+                    System.out.println("Them Sinh Vien vd:  18HCB.csv hoac 17HCB.csv");
                     
                     String LOP = scanner.next();
                   
@@ -149,7 +150,7 @@ public class QLDIEM{
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;                   
                 case 7:
-                    System.out.println("Tổng kết môn học");
+                    System.out.println("Tong Ket Mon Hoc");
                     
                     String Mon = scanner.next();
                   
@@ -157,22 +158,31 @@ public class QLDIEM{
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break;  
                  case 8:
-                    System.out.println("Đổi mật khẩu");
+                    System.out.println("Doi Mat Khau");
                      
-                     MSSV = scanner.next();
-                  
-                    lop.changePassword(MSSV,"khoa2017.csv");
-                    lop.changePassword(MSSV,"khoa2018.csv");
+                     username = scanner.next();
+                
+                    lop.changePassword(username, "giaovu.csv");
                 //lop.importfile("importkhoa2017.csv", "khoa2017.csv"); 
                 break; 
                     
                 
                 case 9:
-                    System.out.println("Nhập tên khóa học+.csv.   vd: 18HCB.csv   \n Hoặc Thời Khóa Biểu vd: TKB18HCB.csv ");                     
-                    String khoa = scanner.next(); 
-                    lop.showfile(khoa);
+                    System.out.println("Danh Sach SV Theo Lop ");                     
+                   
+                    System.out.println("Danh Sach SV Lop 17HCB");
+                    f.showfile("17HCB.csv");
+                    System.out.println("Danh Sach SV Lop 18HCB");
+                    f.showfile("18HCB.csv");
 
                 break; 
+                case 10:
+                    System.out.println("Thoi khoa bieu ");                     
+                   
+                    System.out.println("TKB Lop 17HCB");
+                    f.showfile("TKB17HCB.csv");
+                    System.out.println("TKB Lop 18HCB");
+                    f.showfile("TKB18HCB.csv");
                     
                 }
 

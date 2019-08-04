@@ -18,12 +18,12 @@ import java.io.FileWriter;
  *
  * @author minhq
  */
-public class ImportDSL17HCB extends function {
+public class ImportDSL17HCB extends file {
      /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        function lop = new function();
-        lop.importfile("17HCB.CSV", "17HCBOUT.CSV");
+        file f = new file();
+        f.importfile("17HCB.CSV", "17HCBOUT.CSV");
     }
 }

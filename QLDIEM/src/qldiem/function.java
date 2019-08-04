@@ -16,83 +16,7 @@ import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 public class function {
     Scanner scanner = new Scanner(System.in);
-     void showfile( String  namefile) {
-        try {
-     //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
-     
-            String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
-            File f = new File(currentDirectory );
-            //System.out.println(currentDirectory);
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
-            String line;
-            while ((line = br.readLine()) != null){
-                System.out.println(line);
-                //String[] output = line.split(",");
-                //System.out.println(output[0]); 
-             }
-            br.close();
-         } 
-        catch (IOException ex) 
-        {
-        System.out.println("Loi ghi file: " + ex);
-        }
-    
-     }
-    
-        int showinfor( String MSSV ,String  namefile) {
-        try {
-     //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
-     
-            String currentDirectory = System.getProperty("user.dir")+ "\\"+ namefile;
-            File f = new File(currentDirectory );
-            //System.out.println(currentDirectory);
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF8"));
-            String line;
-            while ((line = br.readLine()) != null){
-                
-                String[] output = line.split(",");
-                if (MSSV.equals(output[0]))
-                {
-                    System.out.println(line);
-                    return 1;
-                }
-                //System.out.println(output[0]); 
-             }
-            br.close();
-         } 
-        catch (IOException ex) 
-        {
-        System.out.println("Loi ghi file: " + ex);
-        }
-        return 0;
-     }
-     void importfile( String importInput , String importOutput ) {
-        try {
-     //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
-     
-            String inputDirectory = System.getProperty("user.dir")+ "\\"+ importInput;
-            String outputDirectory = System.getProperty("user.dir")+ "\\"+ importOutput;
-            File input = new File(inputDirectory );
-            File output = new File(outputDirectory );
-            FileWriter fw = new FileWriter(output, true);
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(input), "UTF8"));
-            String line;
-            while ((line = br.readLine()) != null){
-                System.out.println(line);
-                fw.write("\n" + line);
-                
-                //String[] output = line.split(",");
-                //System.out.println(output[0]); 
-             }
-            fw.close();
-            br.close();
-         } 
-        catch (IOException ex) 
-        {
-        System.out.println("Loi ghi file: " + ex);
-        }
-    
-     }
+     file f= new file();
      
      int login( String  username, String password, String filename) {
         
@@ -126,7 +50,7 @@ public class function {
      }
     
 
-     int remove( String  username, String filename) {
+     int remove( String  MSSV, String filename) {
         
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
@@ -143,7 +67,7 @@ public class function {
             
             while ((line = br.readLine()) != null){
                 String[] output = line.split(",");
-                if (username.equals(output[0]))  {
+                if (MSSV.equals(output[1]))  {
                     continue;
                 }
                 
@@ -157,7 +81,7 @@ public class function {
             
             
             
-            showfile(filename);
+           f.showfile(filename);
             
          } 
         catch (IOException ex) 
@@ -167,7 +91,7 @@ public class function {
         return 0;
      }
      
-    int change( String  username, String filename) {
+    int change( String  MSSV, String filename) {
         
         try {
      //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
@@ -191,8 +115,8 @@ public class function {
             
             while ((line = br.readLine()) != null){
                 String[] output = line.split(",");
-                if (username.equals(output[0]))  {
-                    String newline = output[0]+","+output[1]+","+D1+","+D2+","+D3+","+output[3];
+                if (MSSV.equals(output[1]))  {
+                    String newline = output[1]+","+output[2]+","+D1+","+D2+","+D3+","+output[6];
                     fw.write(newline+"\n");
                     continue;
                 }
@@ -207,29 +131,29 @@ public class function {
             
             
             
-            showfile(filename);
+            f.showfile(filename);
             
-         } 
-        catch (IOException ex) 
-        {
-        System.out.println("Loi ghi file: " + ex);
-        }
-        return 0;
-    }
-        
-        int add( String filename ) {
-        try {
+                } 
+               catch (IOException ex) 
+               {
+               System.out.println("Loi ghi file: " + ex);
+               }
+               return 0;
+           }
 
+        int add( String filename ) {
+           try {
+               
             String inputDirectory = System.getProperty("user.dir")+ "\\ttempfile.csv" ;
           // FileWriter fw = new FileWriter(inputDirectory, true);
             File fileDir = new File(inputDirectory);
  
             BufferedWriter out1 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileDir), "UTF8"));
-            System.out.println(" nhap theo dinh dang MSSV    ,  Ho Ten   , CMND , GIOITINH");
+            System.out.println(" nhap theo dinh dang STT  MSSV   Ho Ten  CMND  GIOITINH");
             String line = scanner.next();
             //out.append(line).append("\r\n");
-            
- 
+           
+            fileDir.
             out1.flush();
 	    out1.close();    
          } 
@@ -304,15 +228,12 @@ void result( String  namefile) {
             //System.out.println(currentDirectory);
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(input), "UTF8"));
             String line;
-            System.out.println("Moi ban nhap mat khau moi diem mon 1 ");
-            float D1 = scanner.nextFloat();
- 
-
-            
+            System.out.println("Moi ban nhap mat khau moi  ");
+            String newpass = scanner.next("String");            
             while ((line = br.readLine()) != null){
                 String[] output = line.split(",");
-                if (username.equals(output[0]))  {
-                    String newline = output[0]+","+output[1]+","+D1+","+output[3];
+                if (username.equals(output[1]))  {
+                    String newline = output[0]+","+output[1]+","+output[3];
                     fw.write(newline+"\n");
                     continue;
                 }
@@ -327,7 +248,7 @@ void result( String  namefile) {
             
             
             
-            showfile(filename);
+            f.showfile(filename);
             
          } 
         catch (IOException ex) 
